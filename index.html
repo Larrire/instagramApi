@@ -1,0 +1,35 @@
+<html>
+<head>
+
+</head>
+<body>
+    <h1>Instagram API</h1>
+
+    <button onclick="insta()">Insta</button>
+
+    
+    <script></script>
+    <script>
+        let mywindow;
+        function insta(){
+            mywindow = window.open(
+                "https://api.instagram.com/oauth/authorize?client_id=756115571593405&redirect_uri=https://larrire.github.io/instagramApi/&scope=user_profile,user_media&response_type=code",
+                "mywindow",
+                "location=1,status=1,width=500,height=700"
+            );
+            mywindow.moveTo(50, 0);
+            mywindow.onload = function(){
+                alert('teste');
+                mywindow.document.querySelector('button.y3zKF').addEventListener('click', function(){
+                    alert('teste');
+                });
+            }
+        }
+        xmlhttp=new XMLHttpRequest();
+        xmlhttp.open("GET", "https://www.instagram.com/siabi.wj/", false);
+        xmlhttp.send();
+        var data = JSON.parse(xmlhttp.responseText);
+        console.log(data);
+    </script>
+</body>
+</html>
